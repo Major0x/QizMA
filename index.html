@@ -517,7 +517,7 @@ function updateQuizMeta(){
 }
 
 // SESSION
-let sName='',sClass='',sQuiz=null,sQs=[];
+let sName='',sClass='',sQuiz=null,sQs=[],sSubmitted=false;
 
 function startQuiz(){
   const name=document.getElementById('inp-name').value.trim();
@@ -532,7 +532,7 @@ function startQuiz(){
     const taken=results.find(r=>r.studentName.toLowerCase()===name.toLowerCase()&&r.quizId===quiz.id);
     if(taken){toast('You have already taken this test. Contact your teacher to reset.');return}
   }
-  sName=name;sClass=cls;sQuiz=quiz;
+  sName=name;sClass=cls;sQuiz=quiz;sSubmitted=false;
   
   let pool = [...quiz.questions];
   if(quiz.bankMode === 'on' && quiz.bankCount > 0){
@@ -606,17 +606,20 @@ function renderQuiz(){
 }
 
 function pickMCQ(qi,oi,ul){
+  if(sSubmitted) return;
   ul.querySelectorAll('.opt').forEach(e=>e.classList.remove('sel'));
   ul.querySelectorAll('input').forEach(r=>r.checked=false);
   ul.children[oi].classList.add('sel');ul.children[oi].querySelector('input').checked=true;
   document.getElementById(`qc${qi}`).classList.add('ans');updateProg();
 }
 function pickTF(qi,val,btn){
+  if(sSubmitted) return;
   const c=document.getElementById(`qc${qi}`);
   c.querySelectorAll('.tfbtn').forEach(b=>b.classList.remove('sel'));
   btn.classList.add('sel');c.dataset.tf=val;c.classList.add('ans');updateProg();
 }
 function pickSA(qi,val){
+  if(sSubmitted) return;
   const c=document.getElementById(`qc${qi}`);
   c.dataset.sa=val.trim();
   if(val.trim()) c.classList.add('ans'); else c.classList.remove('ans');
@@ -628,6 +631,7 @@ function dragS(e){dragSrc=e.currentTarget;e.currentTarget.classList.add('draggin
 function dragO(e){e.preventDefault();e.dataTransfer.dropEffect='move'}
 function dragD(e,qi){
   e.preventDefault();
+  if(sSubmitted) return;
   const target=e.currentTarget;
   if(dragSrc && dragSrc!==target){
     const list=document.getElementById(`ord${qi}`);
@@ -641,6 +645,7 @@ function dragD(e,qi){
 
 let mSel={qi:null,l:null};
 function pickMtch(qi,side,idx,el){
+  if(sSubmitted) return;
   const box=document.getElementById(`mtch${qi}`);
   if(side==='l'){
     box.querySelectorAll('.l-item').forEach(e=>e.classList.remove('sel'));
@@ -669,6 +674,8 @@ function updateProg(){
 }
 
 function submitQuiz(force){
+  if(sSubmitted) return;
+  sSubmitted=true;
   clearInterval(timerInt);
   const ua=sQs.filter((_,i)=>!document.getElementById(`qc${i}`)?.classList.contains('ans')).length;
   if(!force && ua>0&&!confirm(`${ua} question(s) unanswered. Submit anyway?`))return;
