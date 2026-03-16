@@ -10,6 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 :root{--bg:#EEEAE3;--surface:#fff;--primary:#0C3547;--accent:#E8930A;--success:#166534;--success-bg:#DCFCE7;--danger:#B91C1C;--danger-bg:#FEE2E2;--text:#1C1917;--muted:#78716C;--border:#DDD9D2;--r:12px;--shadow:0 4px 20px rgba(0,0,0,.08)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -310,8 +311,14 @@ textarea{resize:vertical;min-height:68px}
       <div id="qlist"></div>
     </div>
     <div class="tpane" id="pane-results">
-      <div class="ph"><div class="ptitle">Student Results</div><button class="btn btn-outline btn-sm" onclick="exportCSV()">⬇ Export CSV</button></div>
-      <p style="font-size:.7rem;color:var(--muted);margin-bottom:1rem">💡 <strong>Tip:</strong> Deleting a student result from this table will "reset" their attempt for Test Mode quizzes.</p>
+      <div class="ph">
+        <div class="ptitle">Student Results</div>
+        <div style="display:flex;gap:.5rem">
+          <button class="btn btn-accent btn-sm" id="btn-cloud-sync" onclick="fetchCloudResults()">🔄 Refresh Cloud</button>
+          <button class="btn btn-outline btn-sm" onclick="exportCSV()">⬇ Export CSV</button>
+        </div>
+      </div>
+      <p style="font-size:.7rem;color:var(--muted);margin-bottom:1rem">💡 <strong>Tip:</strong> Cloud results are merged with your local ones automatically.</p>
       <div class="rtwrap"><table class="rtbl"><thead><tr><th>Student</th><th>Class</th><th>Quiz</th><th>Score</th><th>Date/Time</th><th></th></tr></thead><tbody id="rtbody"></tbody></table></div>
     </div>
     <div class="tpane" id="pane-settings">
@@ -334,6 +341,15 @@ textarea{resize:vertical;min-height:68px}
           <label class="lbl">Teacher Password</label>
           <input type="password" id="teacher-pass" placeholder="Leave blank for no password" onchange="saveKey()" style="width:100%;padding:.68rem .9rem;border:2px solid var(--border);border-radius:var(--r)">
           <p style="font-size:.7rem;color:var(--muted);margin-top:.4rem">Set a password to restrict access to Teacher Mode.</p>
+        </div>
+        <div class="fg" style="margin-top:1.5rem">
+          <label class="lbl">Supabase Project URL (Optional - For Auto-Result Sync)</label>
+          <input type="text" id="supabase-url" placeholder="https://xyz.supabase.co" onchange="saveKey()">
+        </div>
+        <div class="fg" style="margin-top:1.5rem">
+          <label class="lbl">Supabase Anon Key (Optional - For Auto-Result Sync)</label>
+          <input type="password" id="supabase-key" placeholder="eyJhbG..." onchange="saveKey()">
+          <p style="font-size:.7rem;color:var(--muted);margin-top:.4rem">Get these from your Supabase Project Settings > API.</p>
         </div>
         <div class="fg" style="margin-top:1.5rem">
           <label class="lbl">Manage Classes</label>
@@ -478,6 +494,14 @@ textarea{resize:vertical;min-height:68px}
 let quizzes=JSON.parse(localStorage.getItem('qm2_q')||'[]');
 let results=JSON.parse(localStorage.getItem('qm2_r')||'[]');
 let classes=JSON.parse(localStorage.getItem('qm2_c')||'["General"]');
+let db=null;
+
+function initSupabase(){
+  const url=localStorage.getItem('qm_sup_url'),key=localStorage.getItem('qm_sup_key');
+  if(url && key && window.supabase) db=window.supabase.createClient(url,key);
+}
+initSupabase();
+
 function save(){
   localStorage.setItem('qm2_q',JSON.stringify(quizzes));
   localStorage.setItem('qm2_r',JSON.stringify(results));
@@ -704,6 +728,13 @@ function submitQuiz(force){
   const total=sQs.length,pct=Math.round((score/total)*100);
   const entry={id:uid(),studentName:sName,studentClass:sClass,quizId:sQuiz.id,quizTitle:sQuiz.title,score,total,percent:pct,timestamp:new Date().toISOString(),answers:log};
   results.push(entry);save();showResults(entry);show('sr');
+  // CLOUD PUSH
+  if(db){
+    db.from('results').upsert([entry]).then(({error})=>{
+      if(error) console.error('Cloud push fail:', error);
+      else console.log('Result beamed to cloud! 🚀');
+    });
+  }
 }
 
 function showResults(r){
@@ -808,8 +839,10 @@ function printQuiz(qid){
 }
 function renderRTable(){
   const tb=document.getElementById('rtbody');
-  if(!results.length){tb.innerHTML='<tr><td colspan="5" style="text-align:center;padding:2rem;color:var(--muted)">No results yet.</td></tr>';return}
-  const s=[...results].sort((a,b)=>new Date(b.timestamp)-new Date(a.timestamp));
+  const allResults = [...results];
+  // Note: cloud results are merged into 'results' array via fetchCloudResults
+  if(!allResults.length){tb.innerHTML='<tr><td colspan="5" style="text-align:center;padding:2rem;color:var(--muted)">No results yet.</td></tr>';return}
+  const s=[...allResults].sort((a,b)=>new Date(b.timestamp)-new Date(a.timestamp));
   tb.innerHTML=s.map(r=>{
     const cl=r.percent>=70?'hi':r.percent>=50?'md':'lo';
     const dt=new Date(r.timestamp);
@@ -863,10 +896,15 @@ function handleImport(e){
 function saveKey(){
   localStorage.setItem('qm_groq',document.getElementById('groq-key').value);
   localStorage.setItem('qm_pass',document.getElementById('teacher-pass').value);
+  localStorage.setItem('qm_sup_url',document.getElementById('supabase-url').value);
+  localStorage.setItem('qm_sup_key',document.getElementById('supabase-key').value);
+  initSupabase();
 }
 function loadKey(){
   const k=localStorage.getItem('qm_groq');if(k)document.getElementById('groq-key').value=k;
   const p=localStorage.getItem('qm_pass');if(p)document.getElementById('teacher-pass').value=p;
+  const su=localStorage.getItem('qm_sup_url');if(su)document.getElementById('supabase-url').value=su;
+  const sk=localStorage.getItem('qm_sup_key');if(sk)document.getElementById('supabase-key').value=sk;
 }
 
 function exportSettings(){
@@ -1167,6 +1205,25 @@ function exportSyncQuizzes() {
   a.click();
   URL.revokeObjectURL(url);
   toast('Quizzes saved as quizzes.json! Now run sync.ps1.');
+}
+
+async function fetchCloudResults() {
+  if(!db) { toast('Please set Supabase keys in Settings first.'); return; }
+  const btn = document.getElementById('btn-cloud-sync');
+  btn.disabled = true; btn.textContent = 'Syncing...';
+  try {
+    const { data, error } = await db.from('results').select('*');
+    if (error) throw error;
+    if (data) {
+      data.forEach(rr => {
+        if (!results.some(lr => lr.id === rr.id)) {
+          results.push(rr);
+        }
+      });
+      save(); renderRTable(); toast(`Fetched ${data.length} cloud results.`);
+    }
+  } catch (e) { toast('Cloud sync failed.'); console.error(e); }
+  finally { btn.disabled = false; btn.textContent = '🔄 Refresh Cloud'; }
 }
 
 syncRemoteQuizzes();
