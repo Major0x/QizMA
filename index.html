@@ -1176,16 +1176,27 @@ async function syncRemoteQuizzes() {
   try {
     const res = await fetch('./quizzes.json');
     if (!res.ok) return;
-    const remote = await res.json();
-    if (!Array.isArray(remote)) return;
+    const pkg = await res.json();
+    
+    // Handle both array-only and package formats
+    const remoteQs = Array.isArray(pkg) ? pkg : (pkg.quizzes || []);
+    const remoteCfg = (!Array.isArray(pkg) && pkg.config) ? pkg.config : null;
+
+    if (remoteCfg && remoteCfg.url && remoteCfg.key) {
+      console.log('Auto-configuring Supabase from remote...');
+      localStorage.setItem('qm_sup_url', remoteCfg.url);
+      localStorage.setItem('qm_sup_key', remoteCfg.key);
+      initSupabase();
+    }
+
     let added = 0;
-    remote.forEach(rq => {
-      // Check if we already have this quiz (by title or ID if available)
+    remoteQs.forEach(rq => {
       if (!quizzes.some(q => q.title === rq.title)) {
-        quizzes.push({ ...rq, id: uid() }); // New ID to avoid collision
+        quizzes.push({ ...rq, id: uid() });
         added++;
       }
     });
+
     if (added > 0) {
       save(); populateSel(); renderQList();
       console.log(`Synced ${added} new quizzes from remote.`);
@@ -1195,7 +1206,16 @@ async function syncRemoteQuizzes() {
 
 function exportSyncQuizzes() {
   if (!quizzes.length) { toast('No quizzes to publish.'); return; }
-  const data = JSON.stringify(quizzes, null, 2);
+  
+  const pkg = {
+    quizzes: quizzes,
+    config: {
+      url: localStorage.getItem('qm_sup_url'),
+      key: localStorage.getItem('qm_sup_key')
+    }
+  };
+
+  const data = JSON.stringify(pkg, null, 2);
   const blob = new Blob([data], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = Object.assign(document.createElement('a'), {
@@ -1204,7 +1224,7 @@ function exportSyncQuizzes() {
   });
   a.click();
   URL.revokeObjectURL(url);
-  toast('Quizzes saved as quizzes.json! Now run sync.ps1.');
+  toast('Quizzes & Config saved! Now run sync.ps1.');
 }
 
 async function fetchCloudResults() {
