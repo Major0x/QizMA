@@ -226,10 +226,10 @@ textarea{resize:vertical;min-height:68px}
 <!-- HOME -->
 <div id="sh" class="screen active">
   <div class="hw">
-    <div class="hb">
       <div class="hico">📝</div>
       <div class="hname">QuizMaster</div>
       <div class="hsub">SOS Hermann Gmeiner School · Tema</div>
+      <div id="cloud-status-badge" style="margin-top:0.5rem;font-size:0.65rem;font-weight:700;padding:2px 8px;border-radius:10px;display:inline-block;background:#78716C;color:#fff">☁ CLOUD: DISCONNECTED</div>
     </div>
     <div class="hbody">
     <div class="fg"><label class="lbl">Your Name</label><input type="text" id="inp-name" placeholder="e.g. Ama Serwaa"></div>
@@ -498,7 +498,20 @@ let db=null;
 
 function initSupabase(){
   const url=localStorage.getItem('qm_sup_url'),key=localStorage.getItem('qm_sup_key');
-  if(url && key && window.supabase) db=window.supabase.createClient(url,key);
+  const badge = document.getElementById('cloud-status-badge');
+  if(url && key && window.supabase) {
+    db=window.supabase.createClient(url,key);
+    if(badge) {
+      badge.textContent = '☁ CLOUD: ONLINE';
+      badge.style.background = 'var(--success)';
+    }
+    console.log('Supabase Initialized ✅');
+  } else {
+    if(badge) {
+      badge.textContent = '☁ CLOUD: LOCAL ONLY';
+      badge.style.background = '#78716C';
+    }
+  }
 }
 initSupabase();
 
