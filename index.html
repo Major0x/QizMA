@@ -317,7 +317,8 @@ textarea{resize:vertical;min-height:68px}
     <div class="tpane" id="pane-settings">
       <div class="ph">
         <div class="ptitle">Settings</div>
-        <div style="display:flex;gap:.5rem">
+      <div style="display:flex;gap:.5rem">
+          <button class="btn btn-accent btn-sm" onclick="exportSyncQuizzes()">📤 Publish for Students</button>
           <button class="btn btn-outline btn-sm" onclick="exportSettings()">📤 Export Settings</button>
           <button class="btn btn-outline btn-sm" onclick="triggerSettingsImport()">📥 Import Settings</button>
         </div>
@@ -1131,6 +1132,44 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW reg fail:', err));
   });
 }
+
+// REMOTE SYNC
+async function syncRemoteQuizzes() {
+  try {
+    const res = await fetch('./quizzes.json');
+    if (!res.ok) return;
+    const remote = await res.json();
+    if (!Array.isArray(remote)) return;
+    let added = 0;
+    remote.forEach(rq => {
+      // Check if we already have this quiz (by title or ID if available)
+      if (!quizzes.some(q => q.title === rq.title)) {
+        quizzes.push({ ...rq, id: uid() }); // New ID to avoid collision
+        added++;
+      }
+    });
+    if (added > 0) {
+      save(); populateSel(); renderQList();
+      console.log(`Synced ${added} new quizzes from remote.`);
+    }
+  } catch (e) { console.log('Remote sync skipped/unavailable.'); }
+}
+
+function exportSyncQuizzes() {
+  if (!quizzes.length) { toast('No quizzes to publish.'); return; }
+  const data = JSON.stringify(quizzes, null, 2);
+  const blob = new Blob([data], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = Object.assign(document.createElement('a'), {
+    href: url,
+    download: 'quizzes.json'
+  });
+  a.click();
+  URL.revokeObjectURL(url);
+  toast('Quizzes saved as quizzes.json! Now run sync.ps1.');
+}
+
+syncRemoteQuizzes();
 </script>
 </body>
 </html>
