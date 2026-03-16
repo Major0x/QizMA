@@ -753,9 +753,14 @@ function submitQuiz(force){
   results.push(entry);save();showResults(entry);show('sr');
   // CLOUD PUSH
   if(db){
-    db.from('results').upsert([entry]).then(({error})=>{
-      if(error) console.error('Cloud push fail:', error);
-      else console.log('Result beamed to cloud! 🚀');
+    db.from('results').insert([entry]).then(({error})=>{
+      if(error) {
+        console.error('Cloud push fail:', error);
+        toast('Cloud Link Error: ' + error.message);
+      } else {
+        console.log('Result beamed to cloud! 🚀');
+        toast('Result synced to Cloud! ✅');
+      }
     });
   }
 }
