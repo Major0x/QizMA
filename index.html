@@ -751,9 +751,21 @@ function submitQuiz(force){
   const total=sQs.length,pct=Math.round((score/total)*100);
   const entry={id:uid(),studentName:sName,studentClass:sClass,quizId:sQuiz.id,quizTitle:sQuiz.title,score,total,percent:pct,timestamp:new Date().toISOString(),answers:log};
   results.push(entry);save();showResults(entry);show('sr');
-  // CLOUD PUSH
+  // CLOUD PUSH (Postgres is case-sensitive/lowercase favored)
   if(db){
-    db.from('results').insert([entry]).then(({error})=>{
+    const cloudEntry = {
+      id: entry.id,
+      studentname: entry.studentName,
+      studentclass: entry.studentClass,
+      quizid: entry.quizId,
+      quiztitle: entry.quizTitle,
+      score: entry.score,
+      total: entry.total,
+      percent: entry.percent,
+      timestamp: entry.timestamp,
+      answers: entry.answers
+    };
+    db.from('results').insert([cloudEntry]).then(({error})=>{
       if(error) {
         console.error('Cloud push fail:', error);
         toast('Cloud Link Error: ' + error.message);
@@ -1266,8 +1278,21 @@ async function fetchCloudResults() {
     if (error) throw error;
     if (data) {
       data.forEach(rr => {
-        if (!results.some(lr => lr.id === rr.id)) {
-          results.push(rr);
+        // Map back from lowercase (DB) to camelCase (App)
+        const mapped = {
+          id: rr.id,
+          studentName: rr.studentname || rr.studentName,
+          studentClass: rr.studentclass || rr.studentClass,
+          quizId: rr.quizid || rr.quizId,
+          quizTitle: rr.quiztitle || rr.quizTitle,
+          score: rr.score,
+          total: rr.total,
+          percent: rr.percent,
+          timestamp: rr.timestamp,
+          answers: rr.answers
+        };
+        if (!results.some(lr => lr.id === mapped.id)) {
+          results.push(mapped);
         }
       });
       save(); renderRTable(); toast(`Fetched ${data.length} cloud results.`);
