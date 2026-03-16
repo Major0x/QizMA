@@ -1,514 +1,520 @@
-[
-  {
-    "id": "mms4x8r4n9tkta5lchp",
-    "title": "photosynthesis",
-    "subject": "photosynthesis",
-    "class": "1A",
-    "timeLimit": 1,
-    "mode": "practice",
-    "bankMode": "on",
-    "bankCount": 10,
-    "questions": [
-      {
-        "type": "mcq",
-        "text": "What is the primary function of the pigment chlorophyll in photosynthesis?",
-        "options": [
-          "To absorb CO2 from the atmosphere",
-          "To release O2 as a byproduct",
-          "To absorb light energy from the sun",
-          "To synthesize glucose from water"
-        ],
-        "correct": 2,
-        "explanation": "Chlorophyll is the green pigment that plays a crucial role in absorbing light energy from the sun, which is then used to drive the photosynthetic process.",
-        "image": ""
-      },
-      {
-        "type": "tf",
-        "text": "The light-independent reactions of photosynthesis occur in the thylakoid membranes.",
-        "correct": false,
-        "explanation": "The light-independent reactions, also known as the Calvin cycle, occur in the stroma of the chloroplast, not in the thylakoid membranes.",
-        "image": ""
-      },
-      {
-        "type": "sa",
-        "text": "What is the overall equation for photosynthesis?",
-        "correct": "6 CO2 + 6 H2O + light energy → C6H12O6 (glucose) + 6 O2",
-        "explanation": "This equation represents the overall process of photosynthesis, where carbon dioxide and water are converted into glucose and oxygen using light energy.",
-        "image": ""
-      },
-      {
-        "type": "ord",
-        "text": "Order the following steps of the light-dependent reactions in the correct sequence",
-        "items": [
-          "Excitation of electrons in photosystem II",
-          "Transfer of electrons to photosystem I",
-          "Generation of ATP and NADPH",
-          "Absorption of light energy by pigments"
-        ],
-        "explanation": "The correct sequence is: absorption of light energy by pigments, excitation of electrons in photosystem II, transfer of electrons to photosystem I, and generation of ATP and NADPH.",
-        "image": ""
-      },
-      {
-        "type": "mtch",
-        "text": "Match the following terms related to photosynthesis with their definitions",
-        "pairs": [
-          {
-            "left": "Photophosphorylation",
-            "right": "The process of generating ATP from ADP and Pi using light energy"
-          },
-          {
-            "left": "Carbon fixation",
-            "right": "The process of converting CO2 into organic compounds using the energy from ATP and NADPH"
-          }
-        ],
-        "explanation": "Photophosphorylation is the process of generating ATP from ADP and Pi using light energy, while carbon fixation is the process of converting CO2 into organic compounds using the energy from ATP and NADPH.",
-        "image": ""
-      }
-    ]
-  },
-  {
-    "id": "mmsyd99iczgm2db7exf",
-    "title": "hitlers germany",
-    "subject": "hitlers germany",
-    "class": "1A",
-    "timeLimit": 20,
-    "mode": "test",
-    "bankMode": "on",
-    "bankCount": 10,
-    "questions": [
-      {
-        "type": "mcq",
-        "text": "What was the name of the German parliament building that was set on fire in 1933, an event that Hitler used as a pretext to consolidate his power?",
-        "options": [
-          "Reichstag",
-          "Bundestag",
-          "Kaiserhof",
-          "Brandenburg Gate"
-        ],
-        "correct": 0,
-        "explanation": "The Reichstag fire was a pivotal event in Hitler's rise to power, allowing him to suspend civil liberties and consolidate his control over the government.",
-        "image": ""
-      },
-      {
-        "type": "tf",
-        "text": "Hitler's Germany was a federal republic with a strong emphasis on individual rights and freedoms.",
-        "correct": false,
-        "explanation": "Hitler's Germany was a totalitarian state with a strong centralized government and a complete disregard for individual rights and freedoms.",
-        "image": ""
-      },
-      {
-        "type": "sa",
-        "text": "What was the name of the Nazi program aimed at exterminating the Jewish population of Europe?",
-        "correct": "The Holocaust",
-        "explanation": "The Holocaust was a systematic and brutal campaign of persecution and extermination carried out by the Nazi regime and its collaborators, resulting in the deaths of six million Jews and millions of others deemed undesirable.",
-        "image": ""
-      },
-      {
-        "type": "ord",
-        "text": "Order the following events in the history of Nazi Germany: the appointment of Hitler as Chancellor, the invasion of Poland, the establishment of the first concentration camp, and the passage of the Enabling Act.",
-        "items": [
-          "Hitler appointed as Chancellor",
-          "Establishment of the first concentration camp",
-          "Passage of the Enabling Act",
-          "Invasion of Poland"
-        ],
-        "explanation": "The correct order is: Hitler appointed as Chancellor (1933), establishment of the first concentration camp (1933), passage of the Enabling Act (1933), invasion of Poland (1939). These events mark key milestones in the consolidation of Nazi power and the lead-up to World War II.",
-        "image": ""
-      },
-      {
-        "type": "mtch",
-        "text": "Match the following Nazi officials with their roles: Hermann Göring, Joseph Goebbels, and Heinrich Himmler.",
-        "pairs": [
-          {
-            "left": "Hermann Göring",
-            "right": "Commander-in-Chief of the Luftwaffe"
-          },
-          {
-            "left": "Joseph Goebbels",
-            "right": "Minister of Propaganda"
-          },
-          {
-            "left": "Heinrich Himmler",
-            "right": "Head of the SS and Gestapo"
-          }
-        ],
-        "explanation": "Each of these officials played a crucial role in the Nazi regime: Göring was responsible for the air force, Goebbels was responsible for propaganda and public information, and Himmler was responsible for internal security and the enforcement of Nazi ideology.",
-        "image": ""
-      }
-    ]
-  },
-  {
-    "id": "mmsyjupdwrv61bymo1d",
-    "title": "trumps america",
-    "subject": "trumps america",
-    "class": "3A",
-    "timeLimit": 20,
-    "mode": "practice",
-    "bankMode": "on",
-    "bankCount": 10,
-    "questions": [
-      {
-        "type": "mcq",
-        "text": "What was the main focus of Donald Trump's 2016 presidential campaign?",
-        "options": [
-          "Economy",
-          "Immigration",
-          "Foreign Policy",
-          "Environment"
-        ],
-        "correct": 1,
-        "explanation": "Donald Trump's 2016 presidential campaign primarily focused on immigration, with his promise to build a wall along the US-Mexico border being a central theme.",
-        "image": ""
-      },
-      {
-        "type": "tf",
-        "text": "Donald Trump's presidency was marked by a significant decrease in partisan polarization.",
-        "correct": false,
-        "explanation": "Donald Trump's presidency was actually marked by a significant increase in partisan polarization, with his divisive rhetoric and policies contributing to the widening gap between Democrats and Republicans.",
-        "image": ""
-      },
-      {
-        "type": "sa",
-        "text": "What is the name of the executive order signed by Donald Trump in 2017 that restricted travel to the US from several predominantly Muslim countries?",
-        "correct": "Executive Order 13769",
-        "explanation": "Executive Order 13769, also known as the 'travel ban', was signed by Donald Trump in January 2017 and restricted travel to the US from seven predominantly Muslim countries.",
-        "image": ""
-      },
-      {
-        "type": "ord",
-        "text": "Order the following events in the timeline of Donald Trump's presidency",
-        "items": [
-          "Appointment of Supreme Court Justice Neil Gorsuch",
-          "Withdrawal from the Paris Climate Agreement",
-          "Inauguration of Donald Trump",
-          "Impeachment inquiry"
-        ],
-        "explanation": "The correct order is: Inauguration of Donald Trump, Appointment of Supreme Court Justice Neil Gorsuch, Withdrawal from the Paris Climate Agreement, Impeachment inquiry",
-        "image": ""
-      },
-      {
-        "type": "mtch",
-        "text": "Match the following key figures in the Trump administration with their respective roles",
-        "pairs": [
-          {
-            "left": "Jeff Sessions",
-            "right": "Attorney General"
-          },
-          {
-            "left": "Rex Tillerson",
-            "right": "Secretary of State"
-          },
-          {
-            "left": "Gary Cohn",
-            "right": "Director of the National Economic Council"
-          }
-        ],
-        "explanation": "The correct matches are: Jeff Sessions - Attorney General, Rex Tillerson - Secretary of State, Gary Cohn - Director of the National Economic Council",
-        "image": ""
-      },
-      {
-        "type": "mcq",
-        "text": "What was the primary reason for the US withdrawal from the Trans-Pacific Partnership (TPP) in 2017?",
-        "options": [
-          "Economic concerns",
-          "National security concerns",
-          "Environmental concerns",
-          "Political concerns"
-        ],
-        "correct": 0,
-        "explanation": "The primary reason for the US withdrawal from the TPP was economic concerns, with Donald Trump arguing that the agreement would lead to job losses and trade deficits.",
-        "image": ""
-      },
-      {
-        "type": "tf",
-        "text": "The Trump administration's tax reform package, passed in 2017, primarily benefited low- and middle-income households.",
-        "correct": false,
-        "explanation": "The Trump administration's tax reform package, passed in 2017, primarily benefited corporations and high-income households, with critics arguing that it exacerbated income inequality.",
-        "image": ""
-      },
-      {
-        "type": "sa",
-        "text": "What is the name of the Donald Trump's signature legislation aimed at repealing and replacing the Affordable Care Act?",
-        "correct": "American Health Care Act",
-        "explanation": "The American Health Care Act (AHCA) was a signature legislation introduced by the Trump administration in 2017, aimed at repealing and replacing the Affordable Care Act (ACA), also known as Obamacare.",
-        "image": ""
-      },
-      {
-        "type": "ord",
-        "text": "Order the following events in the timeline of the Russia investigation",
-        "items": [
-          "Appointment of Robert Mueller as Special Counsel",
-          "Firing of FBI Director James Comey",
-          "Release of the Mueller Report",
-          "Indictment of Paul Manafort"
-        ],
-        "explanation": "The correct order is: Firing of FBI Director James Comey, Appointment of Robert Mueller as Special Counsel, Indictment of Paul Manafort, Release of the Mueller Report",
-        "image": ""
-      },
-      {
-        "type": "mtch",
-        "text": "Match the following Trump administration policies with their respective goals",
-        "pairs": [
-          {
-            "left": "Tariffs on Chinese goods",
-            "right": "Reducing trade deficit"
-          },
-          {
-            "left": "Withdrawal from the Iran nuclear deal",
-            "right": "Preventing nuclear proliferation"
-          },
-          {
-            "left": "Increase in military spending",
-            "right": "Countering Russian aggression"
-          }
-        ],
-        "explanation": "The correct matches are: Tariffs on Chinese goods - Reducing trade deficit, Withdrawal from the Iran nuclear deal - Preventing nuclear proliferation, Increase in military spending - Countering Russian aggression",
-        "image": ""
-      }
-    ]
-  },
-  {
-    "id": "mmsyzaeryktcxu0htm",
-    "title": "assasination of osama bin laden and its effect",
-    "subject": "History",
-    "class": "2A",
-    "timeLimit": 20,
-    "mode": "test",
-    "bankMode": "on",
-    "bankCount": 10,
-    "questions": [
-      {
-        "type": "mcq",
-        "text": "What was the name of the operation that resulted in the assassination of Osama bin Laden?",
-        "options": [
-          "Operation Neptune Spear",
-          "Operation Enduring Freedom",
-          "Operation Iraqi Freedom",
-          "Operation Desert Storm"
-        ],
-        "correct": 0,
-        "explanation": "Operation Neptune Spear was the military operation conducted by the United States on May 2, 2011, that resulted in the death of Osama bin Laden.",
-        "image": ""
-      },
-      {
-        "type": "tf",
-        "text": "Osama bin Laden was killed in a drone strike.",
-        "correct": false,
-        "explanation": "Osama bin Laden was killed in a raid by US Navy SEALs at his compound in Abbottabad, Pakistan, on May 2, 2011.",
-        "image": ""
-      },
-      {
-        "type": "sa",
-        "text": "What was the name of the location where Osama bin Laden was hiding when he was killed?",
-        "correct": "Abbottabad",
-        "explanation": "Osama bin Laden was hiding in a compound in Abbottabad, Pakistan, when he was killed by US Navy SEALs on May 2, 2011.",
-        "image": ""
-      },
-      {
-        "type": "ord",
-        "text": "Order the following events in the correct sequence: Osama bin Laden's death is announced, US Navy SEALs raid Osama bin Laden's compound, Osama bin Laden's body is buried at sea",
-        "items": [
-          "US Navy SEALs raid Osama bin Laden's compound",
-          "Osama bin Laden's body is buried at sea",
-          "Osama bin Laden's death is announced"
-        ],
-        "explanation": "The correct sequence of events is: US Navy SEALs raid Osama bin Laden's compound, Osama bin Laden's body is buried at sea, and then his death is announced.",
-        "image": ""
-      },
-      {
-        "type": "mtch",
-        "text": "Match the following terms with their definitions: Al-Qaeda, SEAL Team Six, Operation Neptune Spear",
-        "pairs": [
-          {
-            "left": "Al-Qaeda",
-            "right": "A terrorist organization founded by Osama bin Laden"
-          },
-          {
-            "left": "SEAL Team Six",
-            "right": "The US Navy special operations team that conducted the raid on Osama bin Laden's compound"
-          },
-          {
-            "left": "Operation Neptune Spear",
-            "right": "The military operation that resulted in the death of Osama bin Laden"
-          }
-        ],
-        "explanation": "Al-Qaeda is a terrorist organization founded by Osama bin Laden, SEAL Team Six is the US Navy special operations team that conducted the raid on Osama bin Laden's compound, and Operation Neptune Spear was the military operation that resulted in the death of Osama bin Laden.",
-        "image": ""
-      },
-      {
-        "type": "mcq",
-        "text": "What was the main reason for the US to keep the operation a secret until its completion?",
-        "options": [
-          "To avoid alerting Osama bin Laden",
-          "To avoid alerting the Pakistani government",
-          "To avoid alerting the media",
-          "To avoid alerting the public"
-        ],
-        "correct": 1,
-        "explanation": "The US kept the operation a secret until its completion to avoid alerting the Pakistani government, as there were concerns that the Pakistani military or intelligence services might tip off Osama bin Laden.",
-        "image": ""
-      },
-      {
-        "type": "tf",
-        "text": "The assassination of Osama bin Laden led to a significant decrease in terrorist attacks worldwide.",
-        "correct": false,
-        "explanation": "While the assassination of Osama bin Laden was a significant blow to Al-Qaeda, it did not lead to a significant decrease in terrorist attacks worldwide, as the organization has continued to carry out attacks and inspire other extremist groups.",
-        "image": ""
-      },
-      {
-        "type": "sa",
-        "text": "What was the name of the US president who authorized the operation to kill Osama bin Laden?",
-        "correct": "Barack Obama",
-        "explanation": "US President Barack Obama authorized the operation to kill Osama bin Laden, which was carried out by US Navy SEALs on May 2, 2011.",
-        "image": ""
-      },
-      {
-        "type": "ord",
-        "text": "Order the following events in the correct sequence: The US discovers Osama bin Laden's location, The US launches a raid on Osama bin Laden's compound, The US confirms Osama bin Laden's identity",
-        "items": [
-          "The US discovers Osama bin Laden's location",
-          "The US launches a raid on Osama bin Laden's compound",
-          "The US confirms Osama bin Laden's identity"
-        ],
-        "explanation": "The correct sequence of events is: The US discovers Osama bin Laden's location, The US launches a raid on Osama bin Laden's compound, and then The US confirms Osama bin Laden's identity.",
-        "image": ""
-      },
-      {
-        "type": "mtch",
-        "text": "Match the following terms with their definitions: Abbottabad, SEAL Team Six, Operation Enduring Freedom",
-        "pairs": [
-          {
-            "left": "Abbottabad",
-            "right": "The city in Pakistan where Osama bin Laden was hiding"
-          },
-          {
-            "left": "SEAL Team Six",
-            "right": "The US Navy special operations team that conducted the raid on Osama bin Laden's compound"
-          },
-          {
-            "left": "Operation Enduring Freedom",
-            "right": "The US-led military operation in Afghanistan launched in response to the 9/11 attacks"
-          }
-        ],
-        "explanation": "Abbottabad is the city in Pakistan where Osama bin Laden was hiding, SEAL Team Six is the US Navy special operations team that conducted the raid on Osama bin Laden's compound, and Operation Enduring Freedom is the US-led military operation in Afghanistan launched in response to the 9/11 attacks.",
-        "image": ""
-      },
-      {
-        "type": "mcq",
-        "text": "What was the name of the CIA agent who played a key role in tracking down Osama bin Laden?",
-        "options": [
-          "John Brennan",
-          "Leon Panetta",
-          "Jose Rodriguez",
-          "Maya (a pseudonym)"
-        ],
-        "correct": 3,
-        "explanation": "A CIA agent, whose name has been pseudonymized as 'Maya', played a key role in tracking down Osama bin Laden and was a key figure in the operation that led to his death.",
-        "image": ""
-      },
-      {
-        "type": "tf",
-        "text": "The Pakistani government was informed of the operation to kill Osama bin Laden before it took place.",
-        "correct": false,
-        "explanation": "The Pakistani government was not informed of the operation to kill Osama bin Laden before it took place, as the US was concerned that the Pakistani military or intelligence services might tip off Osama bin Laden.",
-        "image": ""
-      },
-      {
-        "type": "sa",
-        "text": "What was the name of the compound where Osama bin Laden was hiding when he was killed?",
-        "correct": "Waziristan Haveli",
-        "explanation": "The compound where Osama bin Laden was hiding when he was killed was called Waziristan Haveli, which was located in Abbottabad, Pakistan.",
-        "image": ""
-      },
-      {
-        "type": "ord",
-        "text": "Order the following events in the correct sequence: The US identifies Osama bin Laden's body, The US conducts DNA testing to confirm Osama bin Laden's identity, The US announces Osama bin Laden's death",
-        "items": [
-          "The US identifies Osama bin Laden's body",
-          "The US conducts DNA testing to confirm Osama bin Laden's identity",
-          "The US announces Osama bin Laden's death"
-        ],
-        "explanation": "The correct sequence of events is: The US identifies Osama bin Laden's body, The US conducts DNA testing to confirm Osama bin Laden's identity, and then The US announces Osama bin Laden's death.",
-        "image": ""
-      },
-      {
-        "type": "mtch",
-        "text": "Match the following terms with their definitions: Al-Qaeda in the Arabian Peninsula, The Haqqani Network, The Taliban",
-        "pairs": [
-          {
-            "left": "Al-Qaeda in the Arabian Peninsula",
-            "right": "A terrorist organization that operates in Yemen and Saudi Arabia"
-          },
-          {
-            "left": "The Haqqani Network",
-            "right": "A terrorist organization that operates in Afghanistan and Pakistan"
-          },
-          {
-            "left": "The Taliban",
-            "right": "A terrorist organization that operates in Afghanistan and Pakistan"
-          }
-        ],
-        "explanation": "Al-Qaeda in the Arabian Peninsula is a terrorist organization that operates in Yemen and Saudi Arabia, The Haqqani Network is a terrorist organization that operates in Afghanistan and Pakistan, and The Taliban is a terrorist organization that operates in Afghanistan and Pakistan.",
-        "image": ""
-      },
-      {
-        "type": "mcq",
-        "text": "What was the impact of the assassination of Osama bin Laden on the global War on Terror?",
-        "options": [
-          "It led to a significant decrease in terrorist attacks worldwide",
-          "It led to a significant increase in terrorist attacks worldwide",
-          "It had no impact on the global War on Terror",
-          "It led to a shift in focus from Al-Qaeda to other terrorist organizations"
-        ],
-        "correct": 3,
-        "explanation": "The assassination of Osama bin Laden led to a shift in focus from Al-Qaeda to other terrorist organizations, such as the Islamic State, as the global War on Terror continued to evolve.",
-        "image": ""
-      },
-      {
-        "type": "tf",
-        "text": "The assassination of Osama bin Laden was carried out by a team of US Army soldiers.",
-        "correct": false,
-        "explanation": "The assassination of Osama bin Laden was carried out by a team of US Navy SEALs, not US Army soldiers.",
-        "image": ""
-      },
-      {
-        "type": "sa",
-        "text": "What was the name of the US Navy ship from which the SEAL Team Six members departed to conduct the raid on Osama bin Laden's compound?",
-        "correct": "USS Carl Vinson",
-        "explanation": "The SEAL Team Six members departed from the USS Carl Vinson, a US Navy aircraft carrier, to conduct the raid on Osama bin Laden's compound.",
-        "image": ""
-      },
-      {
-        "type": "ord",
-        "text": "Order the following events in the correct sequence: The US announces the death of Osama bin Laden, The US begins to withdraw troops from Afghanistan, The US launches a raid on Osama bin Laden's compound",
-        "items": [
-          "The US launches a raid on Osama bin Laden's compound",
-          "The US announces the death of Osama bin Laden",
-          "The US begins to withdraw troops from Afghanistan"
-        ],
-        "explanation": "The correct sequence of events is: The US launches a raid on Osama bin Laden's compound, The US announces the death of Osama bin Laden, and then The US begins to withdraw troops from Afghanistan.",
-        "image": ""
-      },
-      {
-        "type": "mtch",
-        "text": "Match the following terms with their definitions: Ayman al-Zawahiri, Anwar al-Awlaki, Abu Bakr al-Baghdadi",
-        "pairs": [
-          {
-            "left": "Ayman al-Zawahiri",
-            "right": "The current leader of Al-Qaeda"
-          },
-          {
-            "left": "Anwar al-Awlaki",
-            "right": "A US-born cleric who was a key figure in Al-Qaeda in the Arabian Peninsula"
-          },
-          {
-            "left": "Abu Bakr al-Baghdadi",
-            "right": "The former leader of the Islamic State"
-          }
-        ],
-        "explanation": "Ayman al-Zawahiri is the current leader of Al-Qaeda, Anwar al-Awlaki was a US-born cleric who was a key figure in Al-Qaeda in the Arabian Peninsula, and Abu Bakr al-Baghdadi was the former leader of the Islamic State.",
-        "image": ""
-      }
-    ]
+{
+  "quizzes": [
+    {
+      "id": "mms4x8r4n9tkta5lchp",
+      "title": "photosynthesis",
+      "subject": "photosynthesis",
+      "class": "1A",
+      "timeLimit": 1,
+      "mode": "practice",
+      "bankMode": "on",
+      "bankCount": 10,
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "What is the primary function of the pigment chlorophyll in photosynthesis?",
+          "options": [
+            "To absorb CO2 from the atmosphere",
+            "To release O2 as a byproduct",
+            "To absorb light energy from the sun",
+            "To synthesize glucose from water"
+          ],
+          "correct": 2,
+          "explanation": "Chlorophyll is the green pigment that plays a crucial role in absorbing light energy from the sun, which is then used to drive the photosynthetic process.",
+          "image": ""
+        },
+        {
+          "type": "tf",
+          "text": "The light-independent reactions of photosynthesis occur in the thylakoid membranes.",
+          "correct": false,
+          "explanation": "The light-independent reactions, also known as the Calvin cycle, occur in the stroma of the chloroplast, not in the thylakoid membranes.",
+          "image": ""
+        },
+        {
+          "type": "sa",
+          "text": "What is the overall equation for photosynthesis?",
+          "correct": "6 CO2 + 6 H2O + light energy → C6H12O6 (glucose) + 6 O2",
+          "explanation": "This equation represents the overall process of photosynthesis, where carbon dioxide and water are converted into glucose and oxygen using light energy.",
+          "image": ""
+        },
+        {
+          "type": "ord",
+          "text": "Order the following steps of the light-dependent reactions in the correct sequence",
+          "items": [
+            "Excitation of electrons in photosystem II",
+            "Transfer of electrons to photosystem I",
+            "Generation of ATP and NADPH",
+            "Absorption of light energy by pigments"
+          ],
+          "explanation": "The correct sequence is: absorption of light energy by pigments, excitation of electrons in photosystem II, transfer of electrons to photosystem I, and generation of ATP and NADPH.",
+          "image": ""
+        },
+        {
+          "type": "mtch",
+          "text": "Match the following terms related to photosynthesis with their definitions",
+          "pairs": [
+            {
+              "left": "Photophosphorylation",
+              "right": "The process of generating ATP from ADP and Pi using light energy"
+            },
+            {
+              "left": "Carbon fixation",
+              "right": "The process of converting CO2 into organic compounds using the energy from ATP and NADPH"
+            }
+          ],
+          "explanation": "Photophosphorylation is the process of generating ATP from ADP and Pi using light energy, while carbon fixation is the process of converting CO2 into organic compounds using the energy from ATP and NADPH.",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "id": "mmsyd99iczgm2db7exf",
+      "title": "hitlers germany",
+      "subject": "hitlers germany",
+      "class": "1A",
+      "timeLimit": 20,
+      "mode": "test",
+      "bankMode": "on",
+      "bankCount": 10,
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "What was the name of the German parliament building that was set on fire in 1933, an event that Hitler used as a pretext to consolidate his power?",
+          "options": [
+            "Reichstag",
+            "Bundestag",
+            "Kaiserhof",
+            "Brandenburg Gate"
+          ],
+          "correct": 0,
+          "explanation": "The Reichstag fire was a pivotal event in Hitler's rise to power, allowing him to suspend civil liberties and consolidate his control over the government.",
+          "image": ""
+        },
+        {
+          "type": "tf",
+          "text": "Hitler's Germany was a federal republic with a strong emphasis on individual rights and freedoms.",
+          "correct": false,
+          "explanation": "Hitler's Germany was a totalitarian state with a strong centralized government and a complete disregard for individual rights and freedoms.",
+          "image": ""
+        },
+        {
+          "type": "sa",
+          "text": "What was the name of the Nazi program aimed at exterminating the Jewish population of Europe?",
+          "correct": "The Holocaust",
+          "explanation": "The Holocaust was a systematic and brutal campaign of persecution and extermination carried out by the Nazi regime and its collaborators, resulting in the deaths of six million Jews and millions of others deemed undesirable.",
+          "image": ""
+        },
+        {
+          "type": "ord",
+          "text": "Order the following events in the history of Nazi Germany: the appointment of Hitler as Chancellor, the invasion of Poland, the establishment of the first concentration camp, and the passage of the Enabling Act.",
+          "items": [
+            "Hitler appointed as Chancellor",
+            "Establishment of the first concentration camp",
+            "Passage of the Enabling Act",
+            "Invasion of Poland"
+          ],
+          "explanation": "The correct order is: Hitler appointed as Chancellor (1933), establishment of the first concentration camp (1933), passage of the Enabling Act (1933), invasion of Poland (1939). These events mark key milestones in the consolidation of Nazi power and the lead-up to World War II.",
+          "image": ""
+        },
+        {
+          "type": "mtch",
+          "text": "Match the following Nazi officials with their roles: Hermann Göring, Joseph Goebbels, and Heinrich Himmler.",
+          "pairs": [
+            {
+              "left": "Hermann Göring",
+              "right": "Commander-in-Chief of the Luftwaffe"
+            },
+            {
+              "left": "Joseph Goebbels",
+              "right": "Minister of Propaganda"
+            },
+            {
+              "left": "Heinrich Himmler",
+              "right": "Head of the SS and Gestapo"
+            }
+          ],
+          "explanation": "Each of these officials played a crucial role in the Nazi regime: Göring was responsible for the air force, Goebbels was responsible for propaganda and public information, and Himmler was responsible for internal security and the enforcement of Nazi ideology.",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "id": "mmsyjupdwrv61bymo1d",
+      "title": "trumps america",
+      "subject": "trumps america",
+      "class": "3A",
+      "timeLimit": 20,
+      "mode": "practice",
+      "bankMode": "on",
+      "bankCount": 10,
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "What was the main focus of Donald Trump's 2016 presidential campaign?",
+          "options": [
+            "Economy",
+            "Immigration",
+            "Foreign Policy",
+            "Environment"
+          ],
+          "correct": 1,
+          "explanation": "Donald Trump's 2016 presidential campaign primarily focused on immigration, with his promise to build a wall along the US-Mexico border being a central theme.",
+          "image": ""
+        },
+        {
+          "type": "tf",
+          "text": "Donald Trump's presidency was marked by a significant decrease in partisan polarization.",
+          "correct": false,
+          "explanation": "Donald Trump's presidency was actually marked by a significant increase in partisan polarization, with his divisive rhetoric and policies contributing to the widening gap between Democrats and Republicans.",
+          "image": ""
+        },
+        {
+          "type": "sa",
+          "text": "What is the name of the executive order signed by Donald Trump in 2017 that restricted travel to the US from several predominantly Muslim countries?",
+          "correct": "Executive Order 13769",
+          "explanation": "Executive Order 13769, also known as the 'travel ban', was signed by Donald Trump in January 2017 and restricted travel to the US from seven predominantly Muslim countries.",
+          "image": ""
+        },
+        {
+          "type": "ord",
+          "text": "Order the following events in the timeline of Donald Trump's presidency",
+          "items": [
+            "Appointment of Supreme Court Justice Neil Gorsuch",
+            "Withdrawal from the Paris Climate Agreement",
+            "Inauguration of Donald Trump",
+            "Impeachment inquiry"
+          ],
+          "explanation": "The correct order is: Inauguration of Donald Trump, Appointment of Supreme Court Justice Neil Gorsuch, Withdrawal from the Paris Climate Agreement, Impeachment inquiry",
+          "image": ""
+        },
+        {
+          "type": "mtch",
+          "text": "Match the following key figures in the Trump administration with their respective roles",
+          "pairs": [
+            {
+              "left": "Jeff Sessions",
+              "right": "Attorney General"
+            },
+            {
+              "left": "Rex Tillerson",
+              "right": "Secretary of State"
+            },
+            {
+              "left": "Gary Cohn",
+              "right": "Director of the National Economic Council"
+            }
+          ],
+          "explanation": "The correct matches are: Jeff Sessions - Attorney General, Rex Tillerson - Secretary of State, Gary Cohn - Director of the National Economic Council",
+          "image": ""
+        },
+        {
+          "type": "mcq",
+          "text": "What was the primary reason for the US withdrawal from the Trans-Pacific Partnership (TPP) in 2017?",
+          "options": [
+            "Economic concerns",
+            "National security concerns",
+            "Environmental concerns",
+            "Political concerns"
+          ],
+          "correct": 0,
+          "explanation": "The primary reason for the US withdrawal from the TPP was economic concerns, with Donald Trump arguing that the agreement would lead to job losses and trade deficits.",
+          "image": ""
+        },
+        {
+          "type": "tf",
+          "text": "The Trump administration's tax reform package, passed in 2017, primarily benefited low- and middle-income households.",
+          "correct": false,
+          "explanation": "The Trump administration's tax reform package, passed in 2017, primarily benefited corporations and high-income households, with critics arguing that it exacerbated income inequality.",
+          "image": ""
+        },
+        {
+          "type": "sa",
+          "text": "What is the name of the Donald Trump's signature legislation aimed at repealing and replacing the Affordable Care Act?",
+          "correct": "American Health Care Act",
+          "explanation": "The American Health Care Act (AHCA) was a signature legislation introduced by the Trump administration in 2017, aimed at repealing and replacing the Affordable Care Act (ACA), also known as Obamacare.",
+          "image": ""
+        },
+        {
+          "type": "ord",
+          "text": "Order the following events in the timeline of the Russia investigation",
+          "items": [
+            "Appointment of Robert Mueller as Special Counsel",
+            "Firing of FBI Director James Comey",
+            "Release of the Mueller Report",
+            "Indictment of Paul Manafort"
+          ],
+          "explanation": "The correct order is: Firing of FBI Director James Comey, Appointment of Robert Mueller as Special Counsel, Indictment of Paul Manafort, Release of the Mueller Report",
+          "image": ""
+        },
+        {
+          "type": "mtch",
+          "text": "Match the following Trump administration policies with their respective goals",
+          "pairs": [
+            {
+              "left": "Tariffs on Chinese goods",
+              "right": "Reducing trade deficit"
+            },
+            {
+              "left": "Withdrawal from the Iran nuclear deal",
+              "right": "Preventing nuclear proliferation"
+            },
+            {
+              "left": "Increase in military spending",
+              "right": "Countering Russian aggression"
+            }
+          ],
+          "explanation": "The correct matches are: Tariffs on Chinese goods - Reducing trade deficit, Withdrawal from the Iran nuclear deal - Preventing nuclear proliferation, Increase in military spending - Countering Russian aggression",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "id": "mmsyzaeryktcxu0htm",
+      "title": "assasination of osama bin laden and its effect",
+      "subject": "History",
+      "class": "2A",
+      "timeLimit": 20,
+      "mode": "test",
+      "bankMode": "on",
+      "bankCount": 10,
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "What was the name of the operation that resulted in the assassination of Osama bin Laden?",
+          "options": [
+            "Operation Neptune Spear",
+            "Operation Enduring Freedom",
+            "Operation Iraqi Freedom",
+            "Operation Desert Storm"
+          ],
+          "correct": 0,
+          "explanation": "Operation Neptune Spear was the military operation conducted by the United States on May 2, 2011, that resulted in the death of Osama bin Laden.",
+          "image": ""
+        },
+        {
+          "type": "tf",
+          "text": "Osama bin Laden was killed in a drone strike.",
+          "correct": false,
+          "explanation": "Osama bin Laden was killed in a raid by US Navy SEALs at his compound in Abbottabad, Pakistan, on May 2, 2011.",
+          "image": ""
+        },
+        {
+          "type": "sa",
+          "text": "What was the name of the location where Osama bin Laden was hiding when he was killed?",
+          "correct": "Abbottabad",
+          "explanation": "Osama bin Laden was hiding in a compound in Abbottabad, Pakistan, when he was killed by US Navy SEALs on May 2, 2011.",
+          "image": ""
+        },
+        {
+          "type": "ord",
+          "text": "Order the following events in the correct sequence: Osama bin Laden's death is announced, US Navy SEALs raid Osama bin Laden's compound, Osama bin Laden's body is buried at sea",
+          "items": [
+            "US Navy SEALs raid Osama bin Laden's compound",
+            "Osama bin Laden's body is buried at sea",
+            "Osama bin Laden's death is announced"
+          ],
+          "explanation": "The correct sequence of events is: US Navy SEALs raid Osama bin Laden's compound, Osama bin Laden's body is buried at sea, and then his death is announced.",
+          "image": ""
+        },
+        {
+          "type": "mtch",
+          "text": "Match the following terms with their definitions: Al-Qaeda, SEAL Team Six, Operation Neptune Spear",
+          "pairs": [
+            {
+              "left": "Al-Qaeda",
+              "right": "A terrorist organization founded by Osama bin Laden"
+            },
+            {
+              "left": "SEAL Team Six",
+              "right": "The US Navy special operations team that conducted the raid on Osama bin Laden's compound"
+            },
+            {
+              "left": "Operation Neptune Spear",
+              "right": "The military operation that resulted in the death of Osama bin Laden"
+            }
+          ],
+          "explanation": "Al-Qaeda is a terrorist organization founded by Osama bin Laden, SEAL Team Six is the US Navy special operations team that conducted the raid on Osama bin Laden's compound, and Operation Neptune Spear was the military operation that resulted in the death of Osama bin Laden.",
+          "image": ""
+        },
+        {
+          "type": "mcq",
+          "text": "What was the main reason for the US to keep the operation a secret until its completion?",
+          "options": [
+            "To avoid alerting Osama bin Laden",
+            "To avoid alerting the Pakistani government",
+            "To avoid alerting the media",
+            "To avoid alerting the public"
+          ],
+          "correct": 1,
+          "explanation": "The US kept the operation a secret until its completion to avoid alerting the Pakistani government, as there were concerns that the Pakistani military or intelligence services might tip off Osama bin Laden.",
+          "image": ""
+        },
+        {
+          "type": "tf",
+          "text": "The assassination of Osama bin Laden led to a significant decrease in terrorist attacks worldwide.",
+          "correct": false,
+          "explanation": "While the assassination of Osama bin Laden was a significant blow to Al-Qaeda, it did not lead to a significant decrease in terrorist attacks worldwide, as the organization has continued to carry out attacks and inspire other extremist groups.",
+          "image": ""
+        },
+        {
+          "type": "sa",
+          "text": "What was the name of the US president who authorized the operation to kill Osama bin Laden?",
+          "correct": "Barack Obama",
+          "explanation": "US President Barack Obama authorized the operation to kill Osama bin Laden, which was carried out by US Navy SEALs on May 2, 2011.",
+          "image": ""
+        },
+        {
+          "type": "ord",
+          "text": "Order the following events in the correct sequence: The US discovers Osama bin Laden's location, The US launches a raid on Osama bin Laden's compound, The US confirms Osama bin Laden's identity",
+          "items": [
+            "The US discovers Osama bin Laden's location",
+            "The US launches a raid on Osama bin Laden's compound",
+            "The US confirms Osama bin Laden's identity"
+          ],
+          "explanation": "The correct sequence of events is: The US discovers Osama bin Laden's location, The US launches a raid on Osama bin Laden's compound, and then The US confirms Osama bin Laden's identity.",
+          "image": ""
+        },
+        {
+          "type": "mtch",
+          "text": "Match the following terms with their definitions: Abbottabad, SEAL Team Six, Operation Enduring Freedom",
+          "pairs": [
+            {
+              "left": "Abbottabad",
+              "right": "The city in Pakistan where Osama bin Laden was hiding"
+            },
+            {
+              "left": "SEAL Team Six",
+              "right": "The US Navy special operations team that conducted the raid on Osama bin Laden's compound"
+            },
+            {
+              "left": "Operation Enduring Freedom",
+              "right": "The US-led military operation in Afghanistan launched in response to the 9/11 attacks"
+            }
+          ],
+          "explanation": "Abbottabad is the city in Pakistan where Osama bin Laden was hiding, SEAL Team Six is the US Navy special operations team that conducted the raid on Osama bin Laden's compound, and Operation Enduring Freedom is the US-led military operation in Afghanistan launched in response to the 9/11 attacks.",
+          "image": ""
+        },
+        {
+          "type": "mcq",
+          "text": "What was the name of the CIA agent who played a key role in tracking down Osama bin Laden?",
+          "options": [
+            "John Brennan",
+            "Leon Panetta",
+            "Jose Rodriguez",
+            "Maya (a pseudonym)"
+          ],
+          "correct": 3,
+          "explanation": "A CIA agent, whose name has been pseudonymized as 'Maya', played a key role in tracking down Osama bin Laden and was a key figure in the operation that led to his death.",
+          "image": ""
+        },
+        {
+          "type": "tf",
+          "text": "The Pakistani government was informed of the operation to kill Osama bin Laden before it took place.",
+          "correct": false,
+          "explanation": "The Pakistani government was not informed of the operation to kill Osama bin Laden before it took place, as the US was concerned that the Pakistani military or intelligence services might tip off Osama bin Laden.",
+          "image": ""
+        },
+        {
+          "type": "sa",
+          "text": "What was the name of the compound where Osama bin Laden was hiding when he was killed?",
+          "correct": "Waziristan Haveli",
+          "explanation": "The compound where Osama bin Laden was hiding when he was killed was called Waziristan Haveli, which was located in Abbottabad, Pakistan.",
+          "image": ""
+        },
+        {
+          "type": "ord",
+          "text": "Order the following events in the correct sequence: The US identifies Osama bin Laden's body, The US conducts DNA testing to confirm Osama bin Laden's identity, The US announces Osama bin Laden's death",
+          "items": [
+            "The US identifies Osama bin Laden's body",
+            "The US conducts DNA testing to confirm Osama bin Laden's identity",
+            "The US announces Osama bin Laden's death"
+          ],
+          "explanation": "The correct sequence of events is: The US identifies Osama bin Laden's body, The US conducts DNA testing to confirm Osama bin Laden's identity, and then The US announces Osama bin Laden's death.",
+          "image": ""
+        },
+        {
+          "type": "mtch",
+          "text": "Match the following terms with their definitions: Al-Qaeda in the Arabian Peninsula, The Haqqani Network, The Taliban",
+          "pairs": [
+            {
+              "left": "Al-Qaeda in the Arabian Peninsula",
+              "right": "A terrorist organization that operates in Yemen and Saudi Arabia"
+            },
+            {
+              "left": "The Haqqani Network",
+              "right": "A terrorist organization that operates in Afghanistan and Pakistan"
+            },
+            {
+              "left": "The Taliban",
+              "right": "A terrorist organization that operates in Afghanistan and Pakistan"
+            }
+          ],
+          "explanation": "Al-Qaeda in the Arabian Peninsula is a terrorist organization that operates in Yemen and Saudi Arabia, The Haqqani Network is a terrorist organization that operates in Afghanistan and Pakistan, and The Taliban is a terrorist organization that operates in Afghanistan and Pakistan.",
+          "image": ""
+        },
+        {
+          "type": "mcq",
+          "text": "What was the impact of the assassination of Osama bin Laden on the global War on Terror?",
+          "options": [
+            "It led to a significant decrease in terrorist attacks worldwide",
+            "It led to a significant increase in terrorist attacks worldwide",
+            "It had no impact on the global War on Terror",
+            "It led to a shift in focus from Al-Qaeda to other terrorist organizations"
+          ],
+          "correct": 3,
+          "explanation": "The assassination of Osama bin Laden led to a shift in focus from Al-Qaeda to other terrorist organizations, such as the Islamic State, as the global War on Terror continued to evolve.",
+          "image": ""
+        },
+        {
+          "type": "tf",
+          "text": "The assassination of Osama bin Laden was carried out by a team of US Army soldiers.",
+          "correct": false,
+          "explanation": "The assassination of Osama bin Laden was carried out by a team of US Navy SEALs, not US Army soldiers.",
+          "image": ""
+        },
+        {
+          "type": "sa",
+          "text": "What was the name of the US Navy ship from which the SEAL Team Six members departed to conduct the raid on Osama bin Laden's compound?",
+          "correct": "USS Carl Vinson",
+          "explanation": "The SEAL Team Six members departed from the USS Carl Vinson, a US Navy aircraft carrier, to conduct the raid on Osama bin Laden's compound.",
+          "image": ""
+        },
+        {
+          "type": "ord",
+          "text": "Order the following events in the correct sequence: The US announces the death of Osama bin Laden, The US begins to withdraw troops from Afghanistan, The US launches a raid on Osama bin Laden's compound",
+          "items": [
+            "The US launches a raid on Osama bin Laden's compound",
+            "The US announces the death of Osama bin Laden",
+            "The US begins to withdraw troops from Afghanistan"
+          ],
+          "explanation": "The correct sequence of events is: The US launches a raid on Osama bin Laden's compound, The US announces the death of Osama bin Laden, and then The US begins to withdraw troops from Afghanistan.",
+          "image": ""
+        },
+        {
+          "type": "mtch",
+          "text": "Match the following terms with their definitions: Ayman al-Zawahiri, Anwar al-Awlaki, Abu Bakr al-Baghdadi",
+          "pairs": [
+            {
+              "left": "Ayman al-Zawahiri",
+              "right": "The current leader of Al-Qaeda"
+            },
+            {
+              "left": "Anwar al-Awlaki",
+              "right": "A US-born cleric who was a key figure in Al-Qaeda in the Arabian Peninsula"
+            },
+            {
+              "left": "Abu Bakr al-Baghdadi",
+              "right": "The former leader of the Islamic State"
+            }
+          ],
+          "explanation": "Ayman al-Zawahiri is the current leader of Al-Qaeda, Anwar al-Awlaki was a US-born cleric who was a key figure in Al-Qaeda in the Arabian Peninsula, and Abu Bakr al-Baghdadi was the former leader of the Islamic State.",
+          "image": ""
+        }
+      ]
+    }
+  ],
+  "config": {
+    "url": "https://elmhuapccpysiqfejuwq.supabase.co",
+    "key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVsbWh1YXBjY3B5c2lxZmVqdXdxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2NTEwNzAsImV4cCI6MjA4OTIyNzA3MH0.pZFfciU3hsvbfqubLWnmlECwUXegrDvvbQZ-nyqbhLI"
   }
-]
+}
