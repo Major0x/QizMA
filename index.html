@@ -226,6 +226,7 @@ textarea{resize:vertical;min-height:68px}
 <!-- HOME -->
 <div id="sh" class="screen active">
   <div class="hw">
+    <div class="hb">
       <div class="hico">📝</div>
       <div class="hname">QuizMaster</div>
       <div class="hsub">SOS Hermann Gmeiner School · Tema</div>
@@ -1223,12 +1224,21 @@ async function syncRemoteQuizzes() {
     // Handle both array-only and package formats
     const remoteQs = Array.isArray(pkg) ? pkg : (pkg.quizzes || []);
     const remoteCfg = (!Array.isArray(pkg) && pkg.config) ? pkg.config : null;
+    const remoteClasses = (!Array.isArray(pkg) && pkg.classes) ? pkg.classes : null;
 
     if (remoteCfg && remoteCfg.url && remoteCfg.key) {
       console.log('Auto-configuring Supabase from remote...');
       localStorage.setItem('qm_sup_url', remoteCfg.url);
       localStorage.setItem('qm_sup_key', remoteCfg.key);
       initSupabase();
+    }
+
+    if (remoteClasses && Array.isArray(remoteClasses)) {
+      console.log('Syncing classes from remote...');
+      remoteClasses.forEach(c => {
+        if(!classes.includes(c)) classes.push(c);
+      });
+      save();
     }
 
     let added = 0;
@@ -1251,6 +1261,7 @@ function exportSyncQuizzes() {
   
   const pkg = {
     quizzes: quizzes,
+    classes: classes,
     config: {
       url: localStorage.getItem('qm_sup_url'),
       key: localStorage.getItem('qm_sup_key')
