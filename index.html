@@ -234,10 +234,10 @@ textarea{resize:vertical;min-height:68px}
     </div>
     <div class="hbody">
     <div class="fg"><label class="lbl">Your Name</label><input type="text" id="inp-name" placeholder="e.g. Ama Serwaa"></div>
-    <div class="fg"><label class="lbl">Your Class / Grade</label><select id="inp-class"></select></div>
+    <div class="fg"><label class="lbl">Your Class / Grade</label><select id="inp-class" onchange="updateQuizMeta('class')"></select></div>
     <div class="fg">
       <label class="lbl">Choose Quiz</label>
-      <select id="inp-quiz" onchange="updateQuizMeta()"></select>
+      <select id="inp-quiz" onchange="updateQuizMeta('quiz')"></select>
     </div>
     <div id="quiz-meta-info" style="margin-top:-.5rem;margin-bottom:1rem;font-size:.75rem;color:var(--muted);display:none"></div>
     <button class="btn btn-primary btn-block sbig" onclick="startQuiz()">🚀 Start Quiz</button>
@@ -379,7 +379,9 @@ textarea{resize:vertical;min-height:68px}
       <div class="fg" style="margin:0"><label class="lbl">Quiz Title</label><input type="text" id="etitle" placeholder="e.g. ICT Term 1 Quiz"></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem">
         <div class="fg" style="margin:0"><label class="lbl">Subject</label><input type="text" id="esubj" placeholder="e.g. ICT"></div>
-        <div class="fg" style="margin:0"><label class="lbl">Class / Grade</label><select id="eclass"></select></div>
+        <div class="fg" style="margin:0"><label class="lbl">Target Classes</label>
+          <div id="eclass-checks" style="max-height:100px;overflow-y:auto;border:2px solid var(--border);border-radius:var(--r);padding:.5rem;background:#fff"></div>
+        </div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem">
         <div class="fg" style="margin:0"><label class="lbl">Time Limit (mins)</label><input type="text" id="etime" placeholder="0 = No limit" value="0"></div>
@@ -547,21 +549,54 @@ function populateSel(){
 
 function populateClassDropdowns(){
   const studentSel=document.getElementById('inp-class');
-  const editorSel=document.getElementById('eclass');
+  const checkWrap=document.getElementById('eclass-checks');
   const opts=classes.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
   studentSel.innerHTML='<option value="">— Select your class —</option>'+opts;
-  editorSel.innerHTML='<option value="">— Select target class —</option>'+opts;
+  
+  if(checkWrap) {
+    checkWrap.innerHTML = classes.map(c => `
+      <label style="display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem;font-size:.8rem;cursor:pointer">
+        <input type="checkbox" value="${esc(c)}" class="eclass-cb"> ${esc(c)}
+      </label>
+    `).join('');
+  }
 }
 
-function updateQuizMeta(){
+function updateQuizMeta(source){
   const qid=document.getElementById('inp-quiz').value;
+  const cls=document.getElementById('inp-class').value;
   const el=document.getElementById('quiz-meta-info');
+  
+  // If user changed Class, filter Quizzes
+  if(source === 'class') {
+    const s=document.getElementById('inp-quiz');
+    const prevQid = s.value;
+    s.innerHTML='<option value="">— Choose a quiz —</option>';
+    quizzes.forEach(q=>{
+      const qClasses = q.classes || (q.class ? [q.class] : []);
+      // Show if it matches class OR if it is general (no classes set)
+      if(!cls || qClasses.length === 0 || qClasses.includes(cls)) {
+        const o=document.createElement('option');
+        o.value=q.id;
+        o.textContent=q.title+(q.subject?` (${q.subject})`:'');
+        s.appendChild(o);
+      }
+    });
+    // Restore selection if still valid
+    if ([...s.options].some(o => o.value === prevQid)) s.value = prevQid;
+  }
+
   if(!qid){el.style.display='none';return}
   const q=quizzes.find(x=>x.id===qid);
   if(q){
-    el.innerHTML=`Target Class: <strong>${esc(q.class||'Not specified')}</strong>`;
+    const qClasses = q.classes || (q.class ? [q.class] : []);
+    el.innerHTML=`Target Class(es): <strong>${qClasses.length ? esc(qClasses.join(', ')) : 'General'}</strong>`;
     el.style.display='block';
-    if(q.class) document.getElementById('inp-class').value=q.class;
+    
+    // Auto-select class if quiz is specific
+    if(qClasses.length === 1 && source === 'quiz') {
+      document.getElementById('inp-class').value = qClasses[0];
+    }
   }
 }
 
@@ -857,11 +892,26 @@ function removeClass(i){
 function renderQList(){
   const el=document.getElementById('qlist');
   if(!quizzes.length){el.innerHTML='<div class="empty"><div class="ico">📋</div><p>No quizzes yet — create your first one!</p></div>';return}
-  el.innerHTML=quizzes.map(q=>`<div class="qrow"><div class="qri"><h3>${esc(q.title)}</h3><p>${esc(q.subject||'No subject')} · ${esc(q.class||'General')} · ${q.questions.length} question(s) · <span style="text-transform:capitalize;font-weight:600;color:var(--primary)">${q.mode||'practice'}</span> ${q.bankMode==='on'?`<span class="spill md" style="font-size:.6rem">Bank: ${q.bankCount}</span>`:''}</p></div><div class="qra"><button class="btn btn-outline btn-sm" onclick="printQuiz('${q.id}')">🖨️ Print</button><button class="btn btn-outline btn-sm" onclick="openEditor('${q.id}')">✏ Edit</button><button class="btn btn-danger btn-sm" onclick="confirmDel('quiz','${q.id}')">🗑</button></div></div>`).join('');
+  el.innerHTML=quizzes.map(q=>{
+    const qClasses = q.classes || (q.class ? [q.class] : []);
+    const classStr = qClasses.length ? qClasses.join(', ') : 'General';
+    return `<div class="qrow">
+      <div class="qri">
+        <h3>${esc(q.title)}</h3>
+        <p>${esc(q.subject||'No subject')} · ${esc(classStr)} · ${q.questions.length} question(s) · <span style="text-transform:capitalize;font-weight:600;color:var(--primary)">${q.mode||'practice'}</span> ${q.bankMode==='on'?`<span class="spill md" style="font-size:.6rem">Bank: ${q.bankCount}</span>`:''}</p>
+      </div>
+      <div class="qra">
+        <button class="btn btn-outline btn-sm" onclick="printQuiz('${q.id}')">🖨️ Print</button>
+        <button class="btn btn-outline btn-sm" onclick="openEditor('${q.id}')">✏ Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="confirmDel('quiz','${q.id}')">🗑</button>
+      </div>
+    </div>`;
+  }).join('');
 }
 function printQuiz(qid){
   const q=quizzes.find(x=>x.id===qid);if(!q)return;
-  sQuiz=q; sName=""; sClass=q.class||"";
+  const qClasses = q.classes || (q.class ? [q.class] : []);
+  sQuiz=q; sName=""; sClass=qClasses.length ? qClasses[0] : "";
   // Fix: MCQ questions need dOpts for renderQuiz to work
   sQs=q.questions.map(qq=>{
     if(qq.type==='mcq'){
@@ -872,7 +922,7 @@ function printQuiz(qid){
   });
   renderQuiz(); 
   document.getElementById('qz-title').textContent = q.title + " (MASTER COPY)";
-  document.getElementById('print-sub').textContent = (q.subject?q.subject+' · ':'') + (q.class?q.class:'');
+  document.getElementById('print-sub').textContent = (q.subject?q.subject+' · ':'') + (qClasses.join(', '));
   document.getElementById('qz-stu').textContent = "";
   document.getElementById('qprog').style.display = 'none';
   show('sq');
@@ -1094,26 +1144,26 @@ function openEditor(qid){
     document.getElementById('eid').value=qid;
     document.getElementById('etitle').value=q.title;
     document.getElementById('esubj').value=q.subject||'';
-    document.getElementById('eclass').value=q.class||'';
-    document.getElementById('etime').value=q.timeLimit||0;
-    document.getElementById('emode').value=q.mode||'practice';
-    document.getElementById('ebank').value=q.bankMode||'off';
     document.getElementById('ebcount').value=q.bankCount||10;
     document.getElementById('ebcount-wrap').style.display=q.bankMode==='on'?'block':'none';
     document.getElementById('ehed').textContent='Edit Quiz';
+    
+    // Check multi-class checkboxes
+    const qClasses = q.classes || (q.class ? [q.class] : []);
+    document.querySelectorAll('.eclass-cb').forEach(cb => {
+      cb.checked = qClasses.includes(cb.value);
+    });
+    
     eQs=JSON.parse(JSON.stringify(q.questions));
   }
   else{
     document.getElementById('eid').value='';
     document.getElementById('etitle').value='';
     document.getElementById('esubj').value='';
-    document.getElementById('eclass').value='';
-    document.getElementById('etime').value=0;
-    document.getElementById('emode').value='practice';
-    document.getElementById('ebank').value='off';
     document.getElementById('ebcount').value=10;
     document.getElementById('ebcount-wrap').style.display='none';
     document.getElementById('ehed').textContent='New Quiz';
+    document.querySelectorAll('.eclass-cb').forEach(cb => cb.checked = false);
     eQs=[];
   }
   renderEditor();show('se');
@@ -1171,19 +1221,26 @@ function saveQuiz(){
   syncEd();
   const title=document.getElementById('etitle').value.trim();
   const subj=document.getElementById('esubj').value.trim();
-  const ecl=document.getElementById('eclass').value.trim();
   const time=parseInt(document.getElementById('etime').value)||0;
   const mode=document.getElementById('emode').value;
   const bankMode=document.getElementById('ebank').value;
   const bankCount=parseInt(document.getElementById('ebcount').value)||10;
   const qid=document.getElementById('eid').value;
+  
+  // Get selected classes
+  const ecl = [...document.querySelectorAll('.eclass-cb:checked')].map(cb => cb.value);
+
   if(!title){toast('Enter a quiz title.');return}
   for(let i=0;i<eQs.length;i++){
     if(!eQs[i].text.trim()){toast(`Q${i+1}: enter question text.`);return}
     if(eQs[i].type==='mcq'&&eQs[i].options.some(o=>!o.trim())){toast(`Q${i+1}: fill in all 4 options.`);return}
   }
-  if(qid){const idx=quizzes.findIndex(q=>q.id===qid);quizzes[idx]={id:qid,title,subject:subj,class:ecl,timeLimit:time,mode,bankMode,bankCount,questions:eQs}}
-  else quizzes.push({id:uid(),title,subject:subj,class:ecl,timeLimit:time,mode,bankMode,bankCount,questions:eQs});
+  
+  const qObj = {id:qid||uid(),title,subject:subj,classes:ecl,timeLimit:time,mode,bankMode,bankCount,questions:eQs};
+  
+  if(qid){const idx=quizzes.findIndex(q=>q.id===qid);quizzes[idx]=qObj}
+  else quizzes.push(qObj);
+
   save();toast('Quiz saved!');renderQList();show('st');
 }
 
