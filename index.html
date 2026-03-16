@@ -500,16 +500,26 @@ function initSupabase(){
   const url=localStorage.getItem('qm_sup_url'),key=localStorage.getItem('qm_sup_key');
   const badge = document.getElementById('cloud-status-badge');
   if(url && key && window.supabase) {
-    db=window.supabase.createClient(url,key);
-    if(badge) {
-      badge.textContent = '☁ CLOUD: ONLINE';
-      badge.style.background = 'var(--success)';
+    try {
+      db=window.supabase.createClient(url,key);
+      if(badge) {
+        badge.textContent = '☁ CLOUD: ONLINE';
+        badge.style.background = 'var(--success)';
+      }
+      console.log('Supabase Initialized ✅');
+    } catch(e) {
+      console.error('Supabase Init Error:', e);
+      if(badge) { badge.textContent = '☁ CLOUD: INIT ERROR'; badge.style.background = 'var(--danger)'; }
     }
-    console.log('Supabase Initialized ✅');
   } else {
     if(badge) {
-      badge.textContent = '☁ CLOUD: LOCAL ONLY';
-      badge.style.background = '#78716C';
+      if(!url || !key) {
+        badge.textContent = '☁ CLOUD: CONFIG MISSING';
+        badge.style.background = '#78716C';
+      } else {
+        badge.textContent = '☁ CLOUD: OFFLINE (NO JS)';
+        badge.style.background = 'var(--danger)';
+      }
     }
   }
 }
@@ -1187,9 +1197,11 @@ if ('serviceWorker' in navigator) {
 // REMOTE SYNC
 async function syncRemoteQuizzes() {
   try {
-    const res = await fetch('./quizzes.json');
-    if (!res.ok) return;
+    // Cache bust to ensure we get latest keys
+    const res = await fetch('./quizzes.json?v=' + Date.now());
+    if (!res.ok) { console.log('quizzes.json not found on server.'); return; }
     const pkg = await res.json();
+    console.log('Remote Package Loaded:', pkg.config ? 'Contains Config' : 'No Config Found');
     
     // Handle both array-only and package formats
     const remoteQs = Array.isArray(pkg) ? pkg : (pkg.quizzes || []);
