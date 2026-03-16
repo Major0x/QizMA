@@ -1232,6 +1232,11 @@ async function syncRemoteQuizzes() {
       localStorage.setItem('qm_sup_key', remoteCfg.key);
       initSupabase();
     }
+    if (remoteCfg && remoteCfg.groq) {
+      console.log('Syncing AI Key from remote...');
+      localStorage.setItem('qm_groq', remoteCfg.groq);
+      loadKey();
+    }
 
     if (remoteClasses && Array.isArray(remoteClasses)) {
       console.log('Syncing classes from remote...');
@@ -1264,7 +1269,8 @@ function exportSyncQuizzes() {
     classes: classes,
     config: {
       url: localStorage.getItem('qm_sup_url'),
-      key: localStorage.getItem('qm_sup_key')
+      key: localStorage.getItem('qm_sup_key'),
+      groq: localStorage.getItem('qm_groq')
     }
   };
 
