@@ -136,5 +136,135 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": "mmsyjupdwrv61bymo1d",
+    "title": "trumps america",
+    "subject": "trumps america",
+    "class": "3A",
+    "timeLimit": 20,
+    "mode": "practice",
+    "bankMode": "on",
+    "bankCount": 10,
+    "questions": [
+      {
+        "type": "mcq",
+        "text": "What was the main focus of Donald Trump's 2016 presidential campaign?",
+        "options": [
+          "Economy",
+          "Immigration",
+          "Foreign Policy",
+          "Environment"
+        ],
+        "correct": 1,
+        "explanation": "Donald Trump's 2016 presidential campaign primarily focused on immigration, with his promise to build a wall along the US-Mexico border being a central theme.",
+        "image": ""
+      },
+      {
+        "type": "tf",
+        "text": "Donald Trump's presidency was marked by a significant decrease in partisan polarization.",
+        "correct": false,
+        "explanation": "Donald Trump's presidency was actually marked by a significant increase in partisan polarization, with his divisive rhetoric and policies contributing to the widening gap between Democrats and Republicans.",
+        "image": ""
+      },
+      {
+        "type": "sa",
+        "text": "What is the name of the executive order signed by Donald Trump in 2017 that restricted travel to the US from several predominantly Muslim countries?",
+        "correct": "Executive Order 13769",
+        "explanation": "Executive Order 13769, also known as the 'travel ban', was signed by Donald Trump in January 2017 and restricted travel to the US from seven predominantly Muslim countries.",
+        "image": ""
+      },
+      {
+        "type": "ord",
+        "text": "Order the following events in the timeline of Donald Trump's presidency",
+        "items": [
+          "Appointment of Supreme Court Justice Neil Gorsuch",
+          "Withdrawal from the Paris Climate Agreement",
+          "Inauguration of Donald Trump",
+          "Impeachment inquiry"
+        ],
+        "explanation": "The correct order is: Inauguration of Donald Trump, Appointment of Supreme Court Justice Neil Gorsuch, Withdrawal from the Paris Climate Agreement, Impeachment inquiry",
+        "image": ""
+      },
+      {
+        "type": "mtch",
+        "text": "Match the following key figures in the Trump administration with their respective roles",
+        "pairs": [
+          {
+            "left": "Jeff Sessions",
+            "right": "Attorney General"
+          },
+          {
+            "left": "Rex Tillerson",
+            "right": "Secretary of State"
+          },
+          {
+            "left": "Gary Cohn",
+            "right": "Director of the National Economic Council"
+          }
+        ],
+        "explanation": "The correct matches are: Jeff Sessions - Attorney General, Rex Tillerson - Secretary of State, Gary Cohn - Director of the National Economic Council",
+        "image": ""
+      },
+      {
+        "type": "mcq",
+        "text": "What was the primary reason for the US withdrawal from the Trans-Pacific Partnership (TPP) in 2017?",
+        "options": [
+          "Economic concerns",
+          "National security concerns",
+          "Environmental concerns",
+          "Political concerns"
+        ],
+        "correct": 0,
+        "explanation": "The primary reason for the US withdrawal from the TPP was economic concerns, with Donald Trump arguing that the agreement would lead to job losses and trade deficits.",
+        "image": ""
+      },
+      {
+        "type": "tf",
+        "text": "The Trump administration's tax reform package, passed in 2017, primarily benefited low- and middle-income households.",
+        "correct": false,
+        "explanation": "The Trump administration's tax reform package, passed in 2017, primarily benefited corporations and high-income households, with critics arguing that it exacerbated income inequality.",
+        "image": ""
+      },
+      {
+        "type": "sa",
+        "text": "What is the name of the Donald Trump's signature legislation aimed at repealing and replacing the Affordable Care Act?",
+        "correct": "American Health Care Act",
+        "explanation": "The American Health Care Act (AHCA) was a signature legislation introduced by the Trump administration in 2017, aimed at repealing and replacing the Affordable Care Act (ACA), also known as Obamacare.",
+        "image": ""
+      },
+      {
+        "type": "ord",
+        "text": "Order the following events in the timeline of the Russia investigation",
+        "items": [
+          "Appointment of Robert Mueller as Special Counsel",
+          "Firing of FBI Director James Comey",
+          "Release of the Mueller Report",
+          "Indictment of Paul Manafort"
+        ],
+        "explanation": "The correct order is: Firing of FBI Director James Comey, Appointment of Robert Mueller as Special Counsel, Indictment of Paul Manafort, Release of the Mueller Report",
+        "image": ""
+      },
+      {
+        "type": "mtch",
+        "text": "Match the following Trump administration policies with their respective goals",
+        "pairs": [
+          {
+            "left": "Tariffs on Chinese goods",
+            "right": "Reducing trade deficit"
+          },
+          {
+            "left": "Withdrawal from the Iran nuclear deal",
+            "right": "Preventing nuclear proliferation"
+          },
+          {
+            "left": "Increase in military spending",
+            "right": "Countering Russian aggression"
+          }
+        ],
+        "explanation": "The correct matches are: Tariffs on Chinese goods - Reducing trade deficit, Withdrawal from the Iran nuclear deal - Preventing nuclear proliferation, Increase in military spending - Countering Russian aggression",
+        "image": ""
+      }
+    ]
   }
 ]
